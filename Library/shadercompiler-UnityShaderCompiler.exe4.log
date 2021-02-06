@@ -1,0 +1,16 @@
+Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.17f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.17f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  error: 1 plat 4 at ComputeColorInfo.compute(32): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at ComputeColorInfo.compute(39): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at ComputeColorInfo.compute(70): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at ComputeColorInfo.compute(90): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at ComputeColorInfo.compute(116): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=3485 outsize=486 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at Helper.cginc(310): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+  api=4 insize=5909 outsize=5626 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=16577 outsize=5666 kw=_SUNDISK_SIMPLE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+
+Quitting shader compiler process

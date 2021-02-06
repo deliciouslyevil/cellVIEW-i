@@ -1,4 +1,6 @@
-﻿Shader "Custom/Handle" 
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/Handle" 
 {
 	SubShader
 	{
@@ -29,7 +31,7 @@
 			v2f vert(appdata_base v) 
 			{
 				v2f output;
-				output.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				output.pos = UnityObjectToClipPos(v.vertex);
 				return output;
 			}
 
@@ -66,7 +68,7 @@
 			{
 				v2f output;
 
-				output.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				output.pos = UnityObjectToClipPos(v.vertex);
 				output.viewNormal = normalize(mul(UNITY_MATRIX_MV, float4(v.normal, 0.0)).xyz);
 				return output;
 			}
@@ -107,7 +109,7 @@
 			v2f vert (appdata_t v)
 			{
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 				return o;
 			}
 			
@@ -147,7 +149,7 @@
 			v2f vert (appdata_t v)
 			{
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 				return o;
 			}
 			

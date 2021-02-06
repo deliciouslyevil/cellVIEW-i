@@ -1,4 +1,6 @@
-﻿Shader "Custom/DrawBillboards"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/DrawBillboards"
 {
 	CGINCLUDE
 	
@@ -48,7 +50,7 @@
 		output.uv = (_QuadUVs[index] - 0.5) * 2;
 		output.order = round(billboardWorldPos.z);
 		output.color = float4(atan2(circlePos.y, circlePos.x) * 57.29578f,75,75,1); //;
-		output.vertex = mul(UNITY_MATRIX_MVP, float4(billboardVertexWorldPos.xyz,1));
+		output.vertex = UnityObjectToClipPos(float4(billboardVertexWorldPos.xyz,1));
 
 		output.vertex.w = (billboardWorldPos.w < 0) ? 0 : output.vertex.w;
 		return output;
@@ -110,7 +112,7 @@
 		output.order = round(billboardWorldPos.z);
 		output.worldPos = billboardVertexWorldPos.xy;
 		output.color = float4(atan2(circlePos.y, circlePos.x) * 57.29578f,chroma,75,1); //;
-		output.vertex = mul(UNITY_MATRIX_MVP, float4(billboardVertexWorldPos.xyz,1));
+		output.vertex = UnityObjectToClipPos(float4(billboardVertexWorldPos.xyz,1));
 
 		output.vertex.w = (nodeInfo.z < 0) ? 0 : output.vertex.w;
 		return output;
